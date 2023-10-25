@@ -72,7 +72,7 @@ export default function TextForm(props) {
           <p>
             {/* //need to write a logic to keep the value to 0 */}
             {
-              text.split(" ").filter((element) => {
+              text.split(/\S+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }{" "}
