@@ -7,16 +7,18 @@ function Alert(props) {
     return lower.charAt(0).toUpperCase() + lower.slice(1);
   };
   return (
-    ///if props.alert is not null then run the div code ..if null dont run
-    props.alert && (
-      <div
-        className={`alert alert-${props.alert.type} alert-dismissible fade show`}
-        role="alert"
-      >
-        <strong>{capitalize(props.alert.type)}</strong>:
-        {capitalize(props.alert.msg)}
-      </div>
-    )
+    <div style={{ height: "50px" }}>
+      {/* ///if props.alert is not null then run the div code ..if null dont run */}
+      {props.alert && (
+        <div
+          className={`alert alert-${props.alert.type} alert-dismissible fade show`}
+          role="alert"
+        >
+          <strong>{capitalize(props.alert.type)}</strong>:
+          {capitalize(props.alert.msg)}
+        </div>
+      )}
+    </div>
   );
 }
 

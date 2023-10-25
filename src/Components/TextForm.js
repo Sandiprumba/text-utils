@@ -32,14 +32,14 @@ export default function TextForm(props) {
         className="container"
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
-        <h1>{props.heading}</h1>
-        <div className="mb-">
+        <h3>{props.heading}</h3>
+        <div className="mb-3">
           <textarea
             className="form-control"
             value={text}
             onChange={handleChange}
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              backgroundColor: props.mode === "dark" ? "#13466e" : "white",
               color: props.mode === "dark" ? "white" : "black",
             }}
             id="form"
@@ -47,21 +47,21 @@ export default function TextForm(props) {
           ></textarea>
           <button
             type="button"
-            className="btn btn-primary mx-1"
+            className="btn btn-primary mx-1 my-1"
             onClick={handleUpperCase}
           >
             change to uppercase
           </button>
           <button
             type="button"
-            className="btn btn-primary mx-1"
+            className="btn btn-primary mx-1 my-1"
             onClick={handleLowerCase}
           >
             change to lowercase
           </button>
           <button
             type="button"
-            className="btn btn-primary mx-1"
+            className="btn btn-primary mx-1 my-1"
             onClick={handleClearText}
           >
             clear
@@ -71,7 +71,12 @@ export default function TextForm(props) {
           <h2>your text Summary</h2>
           <p>
             {/* //need to write a logic to keep the value to 0 */}
-            {text.split(" ").length} words and {text.length}character
+            {
+              text.split(" ").filter((element) => {
+                return element.length !== 0;
+              }).length
+            }{" "}
+            words and {text.length}character
           </p>
           {/* //to check how long does it takes to read the text  */}
           <p>{0.008 * text.split(" ").length} Minutes read</p>

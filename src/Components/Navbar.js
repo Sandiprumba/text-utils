@@ -30,8 +30,8 @@ export default function Navbar(props) {
               </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/textform">
-                {props.about || "about"}
+              <Link className="nav-link" to="/about">
+                {props.about || "About"}
               </Link>
             </li>
           </ul>
@@ -59,7 +59,6 @@ export default function Navbar(props) {
               Search
             </button>
           </form>
-          <button onClick={props.changeColor}>change</button>
         </div>
       </div>
     </nav>
